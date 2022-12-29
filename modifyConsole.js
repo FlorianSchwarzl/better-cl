@@ -1,42 +1,37 @@
-const logFile = new (require("./log.js"))("logs", 9);
+const { deepClone, merge } = require("sussyutilbyraphaelbader");
+const { reset, text } = require("./maps.js");
+const defaults = require("./defaults");
+const Log = require("./log.js");
+const compile = require("./compile.js");
 
-module.exports = (con) => {
-    con.success = con.log;
+module.exports = (con, levels, path = undefined) => {
+    levels = compile(levels);
+    levels.value = merge(defaults.value, levels.value);
+    levels.color = merge(defaults.color, levels.color);
+    levels.notIntoFile = merge(defaults.notIntoFile, levels.notIntoFile);
+    const logFile = new Log(path, 9);
 
-    require("console-stamp")(con, {
-        format: ':date([HH:MM:ss.l])',
-        include: ['info', 'warn', 'error', 'debug', 'success', 'log'],
-        levels: {
-            error: 1,
-            warn: 2,
-            info: 3,
-            log: 4,
-            debug: 4,
-            success: 4
+    Object.keys(levels.value).forEach(e => {
+        if (!con[e]) con[e] = con.log;
+        if (!logFile[e]) logFile[e] = function (...args) {
+            this.append(e.toLowerCase(), ...args);
+        };
+    });
+    
+    const consoles = deepClone(con);
+
+    require("console-stamp")(consoles, {
+        format: ':date([HH:MM:ss.l]) :label(9)',
+        include: Object.keys(levels.value),
+        levels: levels.value
+    });
+   
+    Object.keys(levels.value).forEach(e => {
+        con[e] = (levels.notIntoFile[e] || !path) ? (...args) => {
+            consoles[e](text[levels.color[e]], ...args, reset);
+        } : (...args) => {
+            consoles[e](text[levels.color[e]], ...args, reset);
+            logFile[e](...args);
         }
     });
-
-    const consoles = [con.info, con.warn, con.error, con.debug, con.success, con.log];
-    con.info = (...args) => {
-        consoles[0]("\u001b[36m", ...args, "\u001b[0m");
-    }
-    con.warn = (...args) => {
-        consoles[1]("\u001b[33m", ...args, "\u001b[0m");
-        logFile.warn(...args);
-    }
-    con.error = (...args) => {
-        consoles[2]("\u001b[31m", ...args, "\u001b[0m");
-        logFile.error(...args);
-    }
-    con.debug = (...args) => {
-        consoles[3]("\u001b[35m", ...args, "\u001b[0m");
-    }
-    con.success = (...args) => {
-        consoles[4]("\u001b[32m", ...args, "\u001b[0m");
-        logFile.success(...args);
-    }
-    con.log = (...args) => {
-        consoles[5]("\u001b[37m", ...args, "\u001b[0m");
-        logFile.log(...args);
-    }
 }
