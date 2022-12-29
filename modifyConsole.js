@@ -4,7 +4,7 @@ const defaults = require("./defaults");
 const Log = require("./log.js");
 const compile = require("./compile.js");
 
-module.exports = (con, levels, path = undefined, timestap = true) => {
+module.exports = (con, levels, path = undefined, timestamp = true, label = true) => {
     levels = compile(levels);
     levels.value = merge(defaults.value, levels.value);
     levels.color = merge(defaults.color, levels.color);
@@ -17,15 +17,15 @@ module.exports = (con, levels, path = undefined, timestap = true) => {
             this.append(e.toLowerCase(), ...args);
         };
     });
-    
+
     const consoles = deepClone(con);
 
     require("console-stamp")(consoles, {
-        format: `${timestap?":date([HH:MM:ss.l])":""} :label(9)`,
+        format: `${timestamp ? ":date([HH:MM:ss.l])" : ""}${label && timestamp ? " " : ""}${label ? ":label(9)" : ""}`,
         include: Object.keys(levels.value),
         levels: levels.value
     });
-   
+
     Object.keys(levels.value).forEach(e => {
         con[e] = (levels.notIntoFile[e] || !path) ? (...args) => {
             consoles[e](text[levels.color[e]], ...args, reset);
