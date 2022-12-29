@@ -9,11 +9,12 @@ module.exports = (con = console, levels = [], path = undefined, timestamp = true
     levels.value = merge(defaults.value, levels.value);
     levels.color = merge(defaults.color, levels.color);
     levels.notIntoFile = merge(defaults.notIntoFile, levels.notIntoFile);
-    const logFile = new Log(path, 9);
+    let logFile;
+    if (path) logFile = new Log(path, 9);
 
     Object.keys(levels.value).forEach(e => {
         if (!con[e]) con[e] = con.log;
-        if (!logFile[e]) logFile[e] = function (...args) {
+        if (logFile && !logFile[e]) logFile[e] = function (...args) {
             this.append(e.toLowerCase(), ...args);
         };
     });
