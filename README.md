@@ -44,7 +44,7 @@ require("better-js-logging").setup(console, [
   color: "red"
 }
 ], "logs");
-console.sus("A simple example.");
+console.simple("A simple example.");
 ```
 
 ### Output
