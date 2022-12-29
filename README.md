@@ -19,10 +19,6 @@ require("better-js-logging").setup();
 #### With options
 
 ```javascript
-
-```javascript
-
-```javascript
 require('better-js-logging').setup(console, methods, path, showTimestamp, showLabel);
 ```
 

@@ -1,6 +1,6 @@
 {
   "name": "better-js-logging",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A better console/logging system for JavaScript with colors, timestamps and automatic logging in files.",
   "main": "index.js",
   "scripts": {
