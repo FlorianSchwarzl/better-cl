@@ -3,7 +3,6 @@ module.exports = (args) => {
     const color = {};
     const notIntoFile = {};
     for (const elm of args) {
-        const ob = {};
         values[elm.name] = elm.value;
         color[elm.name] = elm.color ? elm.color : "white";
         notIntoFile[elm.name] = elm.notIntoFile ? true : false;
