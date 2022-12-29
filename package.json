@@ -1,7 +1,7 @@
 {
   "name": "better-js-logging",
   "version": "1.0.0",
-  "description": "",
+  "description": "A better console/logging system for JavaScript with colors, timestamps and automatic logging in files.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,8 +11,8 @@
     "url": "git+https://github.com/plastik-flasche/better-js-logging.git"
   },
   "keywords": [],
-  "author": "plastik_flasche",
-  "license": "ISC",
+  "author": "plastik_flasche, roteKlaue",
+  "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/plastik-flasche/better-js-logging/issues"
   },
