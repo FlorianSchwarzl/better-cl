@@ -1,1 +1,4 @@
-module.exports = require("./modifyConsole");
+module.exports = {
+    setup: require("./modifyConsole"),
+    colors: require("./maps")
+};

@@ -1,12 +1,3 @@
-const methodToColorMap = {
-    log: "white",
-    warn: "yellow",
-    error: "red",
-    info: "blue",
-    debug: "magenta",
-    success: "green"
-};
-
 const bold = "\u001b[1m";
 const reset = "\u001b[0m";
 
@@ -52,6 +43,5 @@ module.exports = {
     bold,
     reset,
     text,
-    background,
-    methodToColorMap
+    background
 }
