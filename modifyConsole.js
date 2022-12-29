@@ -4,7 +4,7 @@ const defaults = require("./defaults");
 const Log = require("./log.js");
 const compile = require("./compile.js");
 
-module.exports = (con, levels, path = undefined, timestamp = true, label = true) => {
+module.exports = (con = console, levels = [], path = undefined, timestamp = true, label = true) => {
     levels = compile(levels);
     levels.value = merge(defaults.value, levels.value);
     levels.color = merge(defaults.color, levels.color);
