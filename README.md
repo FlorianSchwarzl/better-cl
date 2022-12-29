@@ -1,11 +1,11 @@
-# better-console-logging
+# better-cl
 
 ## Setup
 
 ### Install
 
 ```bash
-npm install better-console-logging
+npm install better-cl
 ```
 
 ### Usage
@@ -13,13 +13,13 @@ npm install better-console-logging
 #### Bare minimum
 
 ```javascript
-require("better-console-logging").setup();
+require("better-cl").setup();
 ```
 
 #### With options
 
 ```javascript
-require('better-console-logging').setup(console, methods, path, showTimestamp, showLabel);
+require('better-cl').setup(console, methods, path, showTimestamp, showLabel);
 ```
 
 `console` the console object to override. The standard `console` object is the default.
@@ -37,7 +37,7 @@ require('better-console-logging').setup(console, methods, path, showTimestamp, s
 ### Code
 
 ```javascript
-require("better-console-logging").setup(console, [
+require("better-cl").setup(console, [
 {
   name:"simple",
   value: 1,
