@@ -13,7 +13,6 @@ module.exports = class {
         }
         this.filePath = filePath + "/" + this.startISO8601 + ".log";
         this.filePath = this.filePath?.replace(/:/g, "-");
-        this.clear();
         this.typeLength = typeLength;
     }
 
