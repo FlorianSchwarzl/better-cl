@@ -10,7 +10,15 @@
     "type": "git",
     "url": "git+https://github.com/plastik-flasche/better-cl+#.git"
   },
-  "keywords": [],
+  "keywords": [
+    "backend",
+    "console",
+    "logging",
+    "log",
+    "JavaScript",
+    "Colors",
+    "File Logging"
+  ],
   "author": "plastik_flasche, roteKlaue",
   "license": "GPL-3.0",
   "bugs": {
