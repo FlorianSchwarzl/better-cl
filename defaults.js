@@ -17,6 +17,5 @@ module.exports.color = {
 }
 
 module.exports.notIntoFile = {
-    info: true,
-    debug: true
+    log: true,
 }
