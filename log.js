@@ -14,6 +14,9 @@ module.exports = class {
         this.filePath = filePath + "/" + this.startISO8601 + ".log";
         this.filePath = this.filePath?.replace(/:/g, "-");
         this.typeLength = typeLength;
+        fs.mkdir(filePath, { recursive: true }, (err) => {
+            if (err) console.debug(err);
+        });
     }
 
     append = (type, ...messages) => {
