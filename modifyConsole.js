@@ -6,9 +6,9 @@ const compile = require("./compile.js");
 
 module.exports = (con = console, levels = [], path = undefined, timestamp = true, label = true) => {
     levels = compile(levels);
-    levels.value = merge(defaults.value, levels.value);
-    levels.color = merge(defaults.color, levels.color);
-    levels.notIntoFile = merge(defaults.notIntoFile, levels.notIntoFile);
+    levels.value = merge(levels.value, defaults.value);
+    levels.color = merge(levels.color, defaults.color);
+    levels.notIntoFile = merge(levels.notIntoFile, defaults.notIntoFile);
     let logFile;
     if (path) logFile = new Log(path, 9);
 

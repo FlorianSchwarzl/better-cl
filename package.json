@@ -1,6 +1,6 @@
 {
   "name": "better-cl",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A better console/logging system for JavaScript with colors, timestamps and automatic logging in files.",
   "main": "index.js",
   "scripts": {
@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/plastik-flasche/better-js-logging.git"
+    "url": "git+https://github.com/plastik-flasche/better-cl+#.git"
   },
   "keywords": [],
   "author": "plastik_flasche, roteKlaue",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/plastik-flasche/better-js-logging/issues"
+    "url": "https://github.com/plastik-flasche/better-cl/issues"
   },
-  "homepage": "https://github.com/plastik-flasche/better-js-logging#readme",
+  "homepage": "https://github.com/plastik-flasche/better-cl#readme",
   "dependencies": {
     "console-stamp": "^3.1.0",
     "sussyutilbyraphaelbader": "^1.8.0"
