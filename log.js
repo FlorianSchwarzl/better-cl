@@ -43,28 +43,4 @@ module.exports = class {
             if (err) console.debug(err);
         });
     }
-
-    info = (...messages) => {
-        this.append("info", ...messages);
-    }
-
-    warn = (...messages) => {
-        this.append("warn", ...messages);
-    }
-
-    error = (...messages) => {
-        this.append("error", ...messages);
-    }
-
-    debug = (...messages) => {
-        this.append("debug", ...messages);
-    }
-
-    log = (...messages) => {
-        this.append("log", ...messages);
-    }
-
-    success = (...messages) => {
-        this.append("success", ...messages);
-    }
 }
