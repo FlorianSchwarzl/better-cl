@@ -1,4 +1,4 @@
-const { deepClone, merge } = require("sussyutilbyraphaelbader");
+const { deepClone, merge } = require("sussy-util");
 const { reset, text } = require("./maps.js");
 const defaults = require("./defaults");
 const Log = require("./log.js");
