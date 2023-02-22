@@ -1,6 +1,6 @@
 {
   "name": "better-cl",
-  "version": "1.0.6",
+  "version": "2.1.0",
   "description": "A better console/logging system for JavaScript with colors, timestamps and automatic logging in files.",
   "main": "index.js",
   "scripts": {
